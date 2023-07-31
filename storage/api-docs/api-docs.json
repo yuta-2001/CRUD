@@ -94,6 +94,48 @@
                         }
                     }
                 }
+            },
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "update user",
+                "operationId": "479f33f268cca6dba677c396b495b60d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "yuta"
+                                    },
+                                    "email": {
+                                        "type": "email",
+                                        "example": "test@test.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
             }
         },
         "/api/path": {
@@ -111,15 +153,15 @@
         "schemas": {
             "UserResource": {
                 "properties": {
-                    "id": {
-                        "description": "id",
-                        "type": "integer",
-                        "example": "1"
-                    },
                     "name": {
-                        "description": "応募経路名",
+                        "description": "user name",
                         "type": "string",
-                        "example": "GOOD FOR JOB"
+                        "example": "yuta"
+                    },
+                    "email": {
+                        "description": "user email",
+                        "type": "email",
+                        "example": "test@test.com"
                     }
                 },
                 "type": "object"

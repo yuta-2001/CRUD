@@ -14,16 +14,16 @@ class UserResource extends JsonResource
 {
     /**
      * @OA\Property(
-     *   property="id",
-     *   type="integer",
-     *   description="id",
-     *   example="1"
-     * ),
-     * @OA\Property(
      *   property="name",
      *   type="string",
-     *   description="応募経路名",
-     *   example="GOOD FOR JOB"
+     *   description="user name",
+     *   example="yuta"
+     * ),
+     * @OA\Property(
+     *   property="email",
+     *   type="email",
+     *   description="user email",
+     *   example="test@test.com"
      * ),
      * 
      * 
