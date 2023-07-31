@@ -18,7 +18,7 @@ class UserController extends Controller
      * 
      * @OA\Get(
      *   tags={"User"},
-     *   path="/api/user",
+     *   path="/api/users",
      *   summary="get user list",
      *   @OA\Response(
      *     response="200",
@@ -38,7 +38,7 @@ class UserController extends Controller
     /**
      * @OA\POST(
      *   tags={"User"},
-     *   path="/api/user",
+     *   path="/api/users",
      *   summary="store user",
      *   @OA\RequestBody(
      *     @OA\JsonContent(
@@ -74,7 +74,7 @@ class UserController extends Controller
      * 
      * @OA\Get(
      *   tags={"User"},
-     *   path="/api/user/{id}",
+     *   path="/api/users/{id}",
      *   summary="get user",
      *   @OA\Parameter(
      *     name="id",
@@ -102,7 +102,7 @@ class UserController extends Controller
     /**
      * @OA\PUT(
      *   tags={"User"},
-     *   path="/api/user/{id}",
+     *   path="/api/users/{id}",
      *   summary="update user",
      *   @OA\Parameter(
      *     name="id",
@@ -143,7 +143,7 @@ class UserController extends Controller
     /**
      * @OA\DELETE(
      *   tags={"User"},
-     *   path="/api/user/{id}",
+     *   path="/api/users/{id}",
      *   summary="delete user",
      *   @OA\Parameter(
      *     name="id",
