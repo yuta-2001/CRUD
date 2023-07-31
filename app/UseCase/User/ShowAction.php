@@ -8,6 +8,6 @@ class ShowAction
 {
     public function __invoke(int $id): User
     {
-        return User::where('id', $id)->select('name', 'email')->firstOrFail();
+        return User::where('id', $id)->select('id', 'name', 'email')->firstOrFail();
     }
 }
