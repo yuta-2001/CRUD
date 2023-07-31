@@ -6,6 +6,39 @@
     },
     "paths": {
         "/api/pets": {
+            "get": {
+                "tags": [
+                    "Pet"
+                ],
+                "summary": "get pet list",
+                "operationId": "ddd551168b1d5b280be068f61a15b92d",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "user id",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PetResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "Pet"
@@ -207,6 +240,21 @@
     },
     "components": {
         "schemas": {
+            "PetResource": {
+                "properties": {
+                    "id": {
+                        "description": "pet id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "name": {
+                        "description": "pet name",
+                        "type": "string",
+                        "example": "pet"
+                    }
+                },
+                "type": "object"
+            },
             "UserResource": {
                 "properties": {
                     "name": {
