@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PetController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(UserController::class)->prefix('user')->name('user.')->group(function () {
+Route::controller(UserController::class)->prefix('users')->name('user.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{id}', 'show')->name('show');
     Route::post('/', 'store')->name('store');
     Route::put('/{id}', 'update')->name('update');
     Route::delete('/{id}', 'delete')->name('delete');
+});
+
+Route::controller(PetController::class)->prefix('pets')->name('pet.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/', 'store')->name('store');
 });
