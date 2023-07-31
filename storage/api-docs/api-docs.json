@@ -5,6 +5,43 @@
         "version": "1.0"
     },
     "paths": {
+        "/api/user": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "store user",
+                "operationId": "287bc3ec931e652c54bb2ddb777040bc",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "yuta"
+                                    },
+                                    "email": {
+                                        "type": "email",
+                                        "example": "test@test.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "password123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
         "/api/path": {
             "get": {
                 "operationId": "f8672c2562b04fa0ad13dedd825d61c7",
