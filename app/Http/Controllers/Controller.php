@@ -9,4 +9,14 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
+    /**
+     * @OA\Get(
+     *     path="/api/path",
+     *     @OA\Response(response="200", description="An example path")
+     * )
+     */
+    public function get() {
+        // your code here
+    }
 }
