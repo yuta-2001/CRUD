@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\UseCase\User\IndexAction;
+use App\UseCase\User\ShowAction;
 use App\UseCase\User\StoreAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreRequest;
@@ -64,5 +65,33 @@ class UserController extends Controller
     public function store(StoreRequest $request, StoreAction $action): void
     {
         $action($request->name, $request->email, $request->password);
+    }
+
+    /**
+     * 
+     * @OA\Get(
+     *   tags={"User"},
+     *   path="/api/user/{id}",
+     *   summary="get user",
+     *   @OA\Parameter(
+     *     name="id",
+     *     in="path",
+     *     description="user id",
+     *     required=true,
+     *     @OA\Schema(
+     *       type="integer",
+     *     )
+     *   ),
+     *   @OA\Response(
+     *     response="200",
+     *     description="OK",
+     *     @OA\JsonContent(ref="#/components/schemas/UserResource")
+     *   )
+     * )
+     * 
+     */
+    public function show(int $id, ShowAction $action): UserResource
+    {
+        return new UserResource($action($id));
     }
 }
