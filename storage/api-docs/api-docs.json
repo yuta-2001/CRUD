@@ -6,6 +6,28 @@
     },
     "paths": {
         "/api/user": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "get user list",
+                "operationId": "ef3192335324c07faff67807a2e8a2f8",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "User"
@@ -55,6 +77,21 @@
     },
     "components": {
         "schemas": {
+            "UserResource": {
+                "properties": {
+                    "id": {
+                        "description": "id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "name": {
+                        "description": "応募経路名",
+                        "type": "string",
+                        "example": "GOOD FOR JOB"
+                    }
+                },
+                "type": "object"
+            },
             "PaginationMeta": {
                 "properties": {
                     "current_page": {
