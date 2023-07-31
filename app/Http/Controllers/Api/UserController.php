@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\UseCase\User\DeleteAction;
 use App\UseCase\User\IndexAction;
 use App\UseCase\User\ShowAction;
 use App\UseCase\User\StoreAction;
@@ -136,5 +137,32 @@ class UserController extends Controller
     public function update(UpdateRequest $request, int $id, UpdateAction $action): void
     {
         $action($id, $request->name, $request->email);
+    }
+
+
+    /**
+     * @OA\DELETE(
+     *   tags={"User"},
+     *   path="/api/user/{id}",
+     *   summary="delete user",
+     *   @OA\Parameter(
+     *     name="id",
+     *     in="path",
+     *     description="user id",
+     *     required=true,
+     *     @OA\Schema(
+     *       type="integer",
+     *     )
+     *   ),
+     *   @OA\Response(
+     *     response="200",
+     *     description="OK",
+     *   )
+     * )
+     * 
+     */
+    public function delete(int $id, DeleteAction $action): void
+    {
+        $action($id);
     }
 }
