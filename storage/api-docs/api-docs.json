@@ -5,13 +5,46 @@
         "version": "1.0"
     },
     "paths": {
-        "/api/user": {
+        "/api/pets": {
+            "post": {
+                "tags": [
+                    "Pet"
+                ],
+                "summary": "store pet",
+                "operationId": "5bbbd00f35cb6067370e16b90bc17ecb",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "pet name"
+                                    },
+                                    "user_id": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/users": {
             "get": {
                 "tags": [
                     "User"
                 ],
                 "summary": "get user list",
-                "operationId": "ef3192335324c07faff67807a2e8a2f8",
+                "operationId": "566aed8efb436ca506e0ef51a032ecd9",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -33,7 +66,7 @@
                     "User"
                 ],
                 "summary": "store user",
-                "operationId": "287bc3ec931e652c54bb2ddb777040bc",
+                "operationId": "be551c1d694a01c164966f58bfa77013",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -64,13 +97,13 @@
                 }
             }
         },
-        "/api/user/{id}": {
+        "/api/users/{id}": {
             "get": {
                 "tags": [
                     "User"
                 ],
                 "summary": "get user",
-                "operationId": "430618624b90f3b94e90e86921470fdd",
+                "operationId": "6f51bd5fa2dddcd25e44cfa53dcbd10a",
                 "parameters": [
                     {
                         "name": "id",
@@ -100,7 +133,7 @@
                     "User"
                 ],
                 "summary": "update user",
-                "operationId": "479f33f268cca6dba677c396b495b60d",
+                "operationId": "070e37fc9aff78ae73860751bc990ed3",
                 "parameters": [
                     {
                         "name": "id",
@@ -142,7 +175,7 @@
                     "User"
                 ],
                 "summary": "delete user",
-                "operationId": "2230f1d9d8da222c4aaf666b406a719b",
+                "operationId": "5a702a3f11c33d10743e96488ba9be06",
                 "parameters": [
                     {
                         "name": "id",
